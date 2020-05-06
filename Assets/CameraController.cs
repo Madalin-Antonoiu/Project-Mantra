@@ -35,8 +35,11 @@ public class CameraController : MonoBehaviour {
     }
 
     void CameraTransforms(){
+
+        currentPan = player.transform.eulerAngles.y;
+
         transform.position = player.transform.position + Vector3.up * cameraHeight;
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, currentPan, transform.eulerAngles.y);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, currentPan, transform.eulerAngles.z);
         tilt.eulerAngles = new Vector3(currentTilt, tilt.eulerAngles.y, tilt.eulerAngles.z);
         mainCam.transform.position = transform.position + tilt.forward * -currentDistance;
     }
