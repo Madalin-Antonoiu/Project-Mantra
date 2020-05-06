@@ -12,10 +12,12 @@ namespace RPG.Movement
         [SerializeField] float maxSpeed = 6f;
         [SerializeField] float maxNavPathLength = 40f;
 
+        CharacterController controller;
         NavMeshAgent navMeshAgent;
         Health health;
 
         private void Awake() {
+            controller = GetComponent<CharacterController>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();
         }
@@ -58,6 +60,7 @@ namespace RPG.Movement
 
         private void UpdateAnimator()
         {
+            controller.Move(navMeshAgent.velocity * Time.deltaTime); // ADDED BY ME
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
