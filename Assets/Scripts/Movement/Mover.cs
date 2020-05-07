@@ -60,7 +60,7 @@ namespace RPG.Movement
 
         private void UpdateAnimator()
         {
-            controller.Move(navMeshAgent.velocity * Time.deltaTime); // ADDED BY ME
+           // controller.Move(navMeshAgent.velocity * Time.deltaTime); // ADDED BY ME
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
