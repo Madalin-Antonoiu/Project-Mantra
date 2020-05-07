@@ -60,10 +60,13 @@ namespace RPG.Movement
 
         private void UpdateAnimator()
         {
-           // controller.Move(navMeshAgent.velocity * Time.deltaTime); // ADDED BY ME
+           
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
+           
+
+            //controller.Move(velocity * Time.deltaTime); // ADDED BY ME
             GetComponent<Animator>().SetFloat("forwardSpeed", speed);
         }
 

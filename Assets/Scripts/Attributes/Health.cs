@@ -19,7 +19,8 @@ namespace RPG.Attributes
         {
         }
 
-        LazyValue<float> healthPoints;
+        
+       LazyValue<float> healthPoints;
 
         bool isDead = false;
 

@@ -105,6 +105,7 @@ public class PlayerControls : MonoBehaviour
 
         //moving controller
         controller.Move(velocity * Time.deltaTime);
+        
 
         if(controller.isGrounded)
         {
